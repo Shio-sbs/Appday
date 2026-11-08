@@ -23,3 +23,11 @@ PWA de código abierto (MIT) para GitHub Pages.
 - El reconocimiento NO identifica automáticamente los tamaños de porción con fiabilidad, y algunas tablas muestran dos columnas. Debes comprobar nombre, energía, proteínas, carbohidratos, grasas y cantidad de referencia.
 - Las calorías acumuladas solo incluyen registros de comidas con datos numéricos reconocibles, no una evaluación clínica ni un balance calórico completo.
 - No guardes información de salud ni claves de API en un repositorio público.
+
+## Programa de pérdida de grasa de 30 días
+
+Se añadió un módulo independiente en [`programa-30-dias/index.html`](./programa-30-dias/index.html) con menú semanal orientativo, hábitos, entrenamientos progresivos, registros de peso y respaldo JSON.
+
+- Abrir con GitHub Pages: `https://shio-sbs.github.io/Appday/programa-30-dias/` (si Pages está habilitado para este repositorio).
+- Los datos del módulo usan almacenamiento local independiente (`mds30_v1`) y **no** importan automáticamente los registros de la versión 2.2; exporta respaldos antes de cambios importantes.
+- Esta actualización no sustituye las funciones existentes de la aplicación principal.
