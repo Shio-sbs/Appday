@@ -1,33 +1,21 @@
-# Mi Día Saludable v2.2 — Pestañas y fotografía de etiqueta nutricional
+# Mi Día Saludable — Seguimiento de dieta (v3.0)
 
-PWA de código abierto (MIT) para GitHub Pages.
+PWA de código abierto bajo licencia MIT. Esta versión muestra **únicamente funciones relacionadas con dieta y evolución del peso**.
 
-## Cambios
-- Apartados independientes: Inicio, Registros, Etiquetas, Planes, Ideas, Metas y Respaldo.
-- Eliminado el lector de códigos de barras.
-- En Etiquetas puedes subir una foto del cuadro nutricional. Tesseract.js intenta reconocer texto en el navegador; puede fallar y siempre se debe revisar/corregir manualmente.
-- Las cifras se introducen según el valor de referencia de la tabla (100 g, 100 ml o porción de otro tamaño), y se calcula la cantidad a consumir.
-- Estimación de impacto sobre calorías registradas hoy, sin suponer una meta calórica personal.
-- Continúan las claves `mds_entries_v1`, `mds_goal_v1`, `mds_plan_v2`, `mds_food_favorites_v21`.
+## Funciones principales
+- Resumen diario de calorías y proteínas registradas.
+- Menú semanal orientativo de 7 días, editable por desayuno, almuerzo, refrigerio y cena.
+- Registro manual de comidas, porciones, calorías, proteínas, carbohidratos y grasas.
+- Historial de comidas y mediciones de peso/cintura.
+- Metas editables, exportación e importación JSON.
 
-## Actualizar sin pérdida de datos
-1. En la versión anterior, descarga **Respaldo JSON** y verifica que el archivo exista. Conserva también el CSV.
-2. Haz una copia de los archivos del repositorio (puedes descargar el ZIP del repositorio en GitHub) por seguridad.
-3. Sustituye `index.html`, `sw.js`, `README.md` y los otros archivos incluidos si hace falta, manteniéndolos en la raíz. Confirma los cambios en la rama `main`.
-4. Espera a que GitHub Pages publique la actualización. Actualiza la página; si muestra la versión vieja, cierra/reabre la PWA o borra SOLO la caché de archivos del sitio, **no** el almacenamiento del sitio.
-5. Verifica que aparezcan registros, meta, planes y favoritos anteriores.
+## Publicación
+La aplicación está en la raíz del repositorio para GitHub Pages: https://shio-sbs.github.io/Appday/ (requiere GitHub Pages habilitado).
 
-## Privacidad y limitaciones
-- Los registros se guardan en el almacenamiento local de tu navegador. No hay sincronización entre dispositivos ni cuenta de IA conectada.
-- El reconocimiento OCR descarga código/modelos de Tesseract desde servicios externos cuando se usa; la imagen se procesa en el navegador. Es posible que el reconocimiento no funcione sin internet o en navegadores con poca memoria.
-- El reconocimiento NO identifica automáticamente los tamaños de porción con fiabilidad, y algunas tablas muestran dos columnas. Debes comprobar nombre, energía, proteínas, carbohidratos, grasas y cantidad de referencia.
-- Las calorías acumuladas solo incluyen registros de comidas con datos numéricos reconocibles, no una evaluación clínica ni un balance calórico completo.
-- No guardes información de salud ni claves de API en un repositorio público.
+## Privacidad y actualización
+Los datos de la nueva versión se guardan en `localStorage` con la clave `mds_dieta_v1`. No se borran las claves anteriores de la app; sus registros históricos no se muestran en esta interfaz ni se migran automáticamente. Haz respaldo JSON si deseas trasladarlos más adelante. GitHub sincroniza el **código**, no los registros personales guardados localmente en cada navegador.
 
-## Programa de pérdida de grasa de 30 días
+Una versión independiente anterior del programa sigue en `programa-30-dias/`; no es la pantalla principal.
 
-Se añadió un módulo independiente en [`programa-30-dias/index.html`](./programa-30-dias/index.html) con menú semanal orientativo, hábitos, entrenamientos progresivos, registros de peso y respaldo JSON.
-
-- Abrir con GitHub Pages: `https://shio-sbs.github.io/Appday/programa-30-dias/` (si Pages está habilitado para este repositorio).
-- Los datos del módulo usan almacenamiento local independiente (`mds30_v1`) y **no** importan automáticamente los registros de la versión 2.2; exporta respaldos antes de cambios importantes.
-- Esta actualización no sustituye las funciones existentes de la aplicación principal.
+## Salud
+Las cantidades del menú son orientativas. La app no prescribe calorías y no estima automáticamente todos los nutrientes de un plato. Antes de utilizar déficits intensivos consulta a un profesional sanitario.
